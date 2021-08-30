@@ -11,7 +11,7 @@ int main() {
     t.loadFromFile("character_sprite.png");
     t.setSmooth(true);
     sf::Sprite player(t, rect);
-    player.setPosition(400,300);
+    player.setPosition(400,600 - 112);
     player.scale(1.5,1.5);
 
     sf::Clock c;
@@ -38,13 +38,13 @@ int main() {
 
         //.......here you draw your game.......//
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            player.move(5,0);
+            player.move(4,0);
             if(c.getElapsedTime().asSeconds() >= 0.15) {
 
                 rect.top = 160;
 
-                if(rect.left >= 2*45) {
-                rect.left = 0;
+                if(rect.left >= 3*45) {
+                    rect.left = 0;
                 }
             
                 else {
@@ -58,12 +58,12 @@ int main() {
             }
         }
         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            player.move(-5,0);
+            player.move(-4,0);
             if(c.getElapsedTime().asSeconds() >= 0.15) {
 
                 rect.top = 80;
 
-                if(rect.left >= 2*45) {
+                if(rect.left >= 3*45) {
                 rect.left = 0;
                 }
             
